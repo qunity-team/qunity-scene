@@ -1,4 +1,10 @@
 {
+  "name": "qunity-scene",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/qunity-team/qunity-scene.git",
+  "author": "rockyl <rockyf@126.com>",
+  "license": "MIT",
   "dependencies": {
     "typescript": "^3.9.7"
   }
