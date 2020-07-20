@@ -1,0 +1,54 @@
+const {Doc} = require('qunity');
+const pixi = require('qunity-pixi');
+
+exports.doc = Doc({type: 'scene', name: 'main'}).kv({
+	factory: function () {
+		console.log('hello');
+		return pixi.Node({name: 'Scenes', y: Math.random()}).c([
+			pixi.Node({name: 'MainScene', active: true}).c([
+				pixi.Node({name: 'Box', x: 375, y: 300,}).c([
+					pixi.Sprite({
+						uuid: 'sprite-logo',
+						name: 'logo', texture: 'asset://69410bc3-8df2-49a3-9959-f86e56d2aaf4',
+						anchor: {x: 0.5, y: 0.5,}
+					}),
+					pixi.Text({
+						name: 'text',
+						uuid: 'text-hello',
+						y: 200,
+						text: 'hello',
+						style: {fill: 'white', fontSize: 40},
+						anchor: {x: 0.5}
+					}),
+				]).s([
+					{script: '/scripts/Hello', text: 'entity://text-hello', sprite: 'entity://sprite-logo'},
+				]),
+			]),
+		])
+	},
+	assets: [
+		{
+			uuid: "69410bc3-8df2-49a3-9959-f86e56d2aaf4",
+			url: "assets/images/logo.png",
+		},
+		{
+			uuid: "ec0f3cfa-489e-4343-bc38-30df8d54576b",
+			url: "assets/images/bear.png",
+		},
+		{uuid: "uuid-assets/images/test/banner.png", url: "assets/images/test/banner.png"},
+		{uuid: "uuid-assets/images/test/btnBg.png", url: "assets/images/test/btnBg.png"},
+		{uuid: "uuid-assets/images/test/circle.png", url: "assets/images/test/circle.png"},
+		{uuid: "uuid-assets/images/test/close.png", url: "assets/images/test/close.png"},
+		{uuid: "uuid-assets/images/test/front.png", url: "assets/images/test/front.png"},
+		{uuid: "uuid-assets/images/test/handle.png", url: "assets/images/test/handle.png"},
+		{uuid: "uuid-assets/images/test/reward.png", url: "assets/images/test/reward.png"},
+		{uuid: "uuid-assets/images/test/rewards-item.png", url: "assets/images/test/rewards-item.png"},
+		{uuid: "uuid-assets/images/test/rewardsBg.png", url: "assets/images/test/rewardsBg.png"},
+		{uuid: "uuid-assets/images/test/rule.png", url: "assets/images/test/rule.png"},
+		{uuid: "uuid-assets/images/test/startBtn.png", url: "assets/images/test/startBtn.png"},
+		{uuid: "uuid-assets/images/test/stone.png", url: "assets/images/test/stone.png"},
+		{uuid: "uuid-assets/images/test/tips-bg.png", url: "assets/images/test/tips-bg.png"},
+		{uuid: "uuid-assets/images/test/tool.png", url: "assets/images/test/tool.png"},
+		{uuid: "uuid-assets/images/test/treasure.png", url: "assets/images/test/treasure.png"},
+	]
+});
