@@ -6,6 +6,7 @@
   "author": "rockyl <rockyf@126.com>",
   "license": "MIT",
   "dependencies": {
-    "typescript": "^3.9.7"
+    "typescript": "^3.9.7",
+    "uuid": "^8.3.0"
   }
 }

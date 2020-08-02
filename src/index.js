@@ -3,8 +3,9 @@
  */
 
 const ts = require('typescript');
+const {v4: generateUUID} = require('uuid');
 
-exports.parse = function parse(sceneSource){
+exports.parse = function parse(sceneSource) {
 	let sourceFile = ts.createSourceFile('test.js', sceneSource, ts.ScriptTarget.ES2015);
 
 	function findDoc(sourceFile) {
@@ -117,6 +118,9 @@ exports.parse = function parse(sceneSource){
 			}
 		}
 
+		if (!props.hasOwnProperty('uuid')) {
+			props.uuid = generateUUID();
+		}
 		return props;
 	}
 
@@ -142,4 +146,4 @@ exports.parse = function parse(sceneSource){
 		node,
 		assets,
 	};
-}
+};
