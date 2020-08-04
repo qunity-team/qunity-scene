@@ -1,12 +1,12 @@
 {
   "name": "qunity-scene",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "main": "src/index.js",
   "repository": "https://github.com/qunity-team/qunity-scene.git",
   "author": "rockyl <rockyf@126.com>",
   "license": "MIT",
   "dependencies": {
-    "typescript": "^3.9.7",
-    "uuid": "^8.3.0"
+    "pure-uuid": "^1.6.1",
+    "typescript": "^3.9.7"
   }
 }

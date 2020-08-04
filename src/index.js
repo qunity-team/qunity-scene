@@ -3,7 +3,10 @@
  */
 
 const ts = require('typescript');
-const {v4: generateUUID} = require('uuid');
+const UUID = require('pure-uuid');
+function generateUUID() {
+	return new UUID(4).format();
+}
 
 exports.parse = function parse(sceneSource) {
 	let sourceFile = ts.createSourceFile('test.js', sceneSource, ts.ScriptTarget.ES2015);
@@ -138,12 +141,12 @@ exports.parse = function parse(sceneSource) {
 		}
 	}
 
-	let node = parseNode(factory);
+	let view = parseNode(factory);
 	assets = evalSource(assets.initializer);
 
 	return {
 		options,
-		node,
+		view,
 		assets,
 	};
 };

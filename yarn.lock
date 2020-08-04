@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+pure-uuid@^1.6.1:
+  version "1.6.1"
+  resolved "https://registry.npmjs.org/pure-uuid/-/pure-uuid-1.6.1.tgz#ec3f9c11b37794551eca9d7a9ce6fb1adc9bc1ed"
+  integrity sha512-0qnd02lO/X6ENcPWyZJf8YwjF3GBou4vAG/k2ecmPSI+qNkTivWw/9MeGiR99Q9DnHfpkTT70hsYUCv297S1xw==
+
 typescript@^3.9.7:
   version "3.9.7"
   resolved "https://registry.npm.taobao.org/typescript/download/typescript-3.9.7.tgz?cache=0&sync_timestamp=1595056727848&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Ftypescript%2Fdownload%2Ftypescript-3.9.7.tgz#98d600a5ebdc38f40cb277522f12dc800e9e25fa"
