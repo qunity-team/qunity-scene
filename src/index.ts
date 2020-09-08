@@ -2,13 +2,10 @@
  * Created by rockyl on 2020-07-17.
  */
 
-const ts = require('typescript');
-const UUID = require('pure-uuid');
-function generateUUID() {
-	return new UUID(4).format();
-}
+import ts from 'typescript';
+import {v4 as generateUUID} from 'uuid';
 
-exports.parse = function parse(sceneSource) {
+export function parse(sceneSource) {
 	let sourceFile = ts.createSourceFile('test.js', sceneSource, ts.ScriptTarget.ES2015);
 
 	function findDoc(sourceFile) {
@@ -42,7 +39,7 @@ exports.parse = function parse(sceneSource) {
 	}
 
 	function parseExpression(node) {
-		let result = {};
+		let result:any = {};
 
 		if (node.expression.kind === ts.SyntaxKind.PropertyAccessExpression) {
 			let prev = node.expression.expression;
@@ -101,9 +98,9 @@ exports.parse = function parse(sceneSource) {
 	}
 
 	function parseNode(node) {
-		let props = {};
+		let props:any = {};
 		if (node.arguments) {
-			let r = parseArguments(node);
+			let r:any = parseArguments(node);
 			if (r) {
 				if (props.children && r.children) {
 					props.children.push(...r.children);
@@ -127,7 +124,7 @@ exports.parse = function parse(sceneSource) {
 		return props;
 	}
 
-	const docAst = findDoc(sourceFile);
+	const docAst:any = findDoc(sourceFile);
 
 	let options = evalSource(docAst.expression.expression.arguments[0]);
 
@@ -149,4 +146,4 @@ exports.parse = function parse(sceneSource) {
 		view,
 		assets,
 	};
-};
+}
