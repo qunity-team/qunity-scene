@@ -15,8 +15,7 @@
     "rootDir": "./src",
     "sourceMap": true,
     "target": "es2015",
-    "declaration": true,
-    "watch": true
+    "declaration": true
   },
   "include": [
     "./src"
