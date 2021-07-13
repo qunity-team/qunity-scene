@@ -5,7 +5,7 @@
     "baseUrl": ".",
     "experimentalDecorators": true,
     "lib": ["esnext", "dom"],
-    "module": "ES6",
+    "module": "CommonJS",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "noImplicitAny": false,

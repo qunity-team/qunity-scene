@@ -1,9 +1,12 @@
+"use strict";
 /**
  * Created by rockyl on 2020-07-17.
  */
-import ts from 'typescript';
-import { v4 as generateUUID } from 'uuid';
-export function parse(sceneSource) {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.parse = void 0;
+const ts = require("typescript");
+const uuid_1 = require("uuid");
+function parse(sceneSource) {
     let sourceFile = ts.createSourceFile('test.js', sceneSource, ts.ScriptTarget.ES2015);
     function findDoc(sourceFile) {
         for (let statement of sourceFile.statements) {
@@ -110,7 +113,7 @@ export function parse(sceneSource) {
             }
         }
         if (!props.hasOwnProperty('uuid')) {
-            props.uuid = generateUUID();
+            props.uuid = uuid_1.v4();
         }
         return props;
     }
@@ -131,4 +134,5 @@ export function parse(sceneSource) {
         assets,
     };
 }
+exports.parse = parse;
 //# sourceMappingURL=index.js.map
